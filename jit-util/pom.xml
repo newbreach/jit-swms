@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>jit-parent</artifactId>
+        <groupId>cn.jitmarketing</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../jit-parent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
+    <artifactId>jit-util</artifactId>
+
+    <distributionManagement>
+        <repository>
+            <id>SWMS-Releases</id>
+            <url>http://192.168.0.129:8081/nexus/content/repositories/SWMS-Releases</url>
+        </repository>
+
+        <repository>
+            <id>SWMS-Snapshots</id>
+            <url>http://192.168.0.129:8081/nexus/content/repositories/SWMS-Snapshots</url>
+        </repository>
+
+    </distributionManagement>
+
+</project>

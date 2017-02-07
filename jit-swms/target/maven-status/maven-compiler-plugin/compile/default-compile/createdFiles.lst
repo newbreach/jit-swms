@@ -1,0 +1,7 @@
+cn\jitmarketing\domain\ServerInfoExample$GeneratedCriteria.class
+cn\jitmarketing\domain\ServerInfoExample.class
+cn\jitmarketing\dao\ServerInfoMapper.class
+cn\jitmarketing\domain\ServerInfoExample$Criteria.class
+cn\jitmarketing\web\IndexController.class
+cn\jitmarketing\domain\ServerInfo.class
+cn\jitmarketing\domain\ServerInfoExample$Criterion.class

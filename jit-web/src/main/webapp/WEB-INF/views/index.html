@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<base href="${request.contextPath}/">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="resource/favicon.ico" type="image/x-icon"/>
+    <script src="resource/jquery-1.11.2.min.js"></script>
+    <link href="resource/common.css" rel="stylesheet" type="text/css"/>
+    <title>MybatisDemo</title>
+</head>
+<body>
+<p>${welcome}</p>
+<p id="info"></p>
+</body>
+<a href="sysUser">进入用户列表</a>
+<hr>
+<input type="button" onclick="checkJson()" value="测试发送json参数请求" style="width: 100px;height: 50px;"/>
+
+<script type="text/javascript">
+    function checkJson() {
+        var testJson = '{ "state": "1", "email": "test@qq.com" }';
+        alert("测试发送json参数请求\n输入参数:"+testJson);
+            $.ajax({
+                dataType: "json",
+                cache: false,
+                type: "POST",
+                url: "reqJson",
+                async: false,
+                contentType:"application/json",
+                data: testJson,
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("系统出错!");
+                },
+                success: function (data) {
+                    alert("返回结果: "+JSON.stringify(data));
+                }
+            });
+    }
+    $(document).ready(function () {
+        $("#info").text("该项目用于搭建spring mybatis maven 项目");
+    });
+</script>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<base href="${request.contextPath}/">
+<head>
+    <meta charset="UTF-8">
+    <title>sysUser信息</title>
+</head>
+<link rel="shortcut icon" href="resource/favicon.ico" type="image/x-icon"/>
+<script src="resource/jquery-1.11.2.min.js"></script>
+<script src="resource/jquery-form.js"></script>
+<link href="resource/common.css" rel="stylesheet" type="text/css"/>
+<body>
+<form action="sysUser/save" method="post" id="formSubmit" class="editDiv" onsubmit="return afterResponse();">
+    <input type="hidden" name="id" value="${obj.id}">
+    <table>
+        <tr>
+            <td>Email</td>
+            <td><input type="type" name="email" value="${obj.email}"></td>
+        </tr>
+        <tr>
+            <td>QQ</td>
+            <td><input type="number" name="qq" value="${obj.qq}"></td>
+        </tr>
+        <tr>
+            <td>TelPhone</td>
+            <td><input type="number" name="telPhone" value="${obj.telPhone}"></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><input type="submit" value="提交"></td>
+        </tr>
+    </table>
+</form>
+<p><a href="downloadTempleteFile/sysUser_xls">下载文件</a></p>
+<form action="sysUser/importUser" enctype="multipart/form-data"  method="post" id="formSubmit2" class="editDiv" onsubmit="return afterResponse2();">
+    <table>
+
+        <tr>
+            <td>选择文件  </td>
+            <td><input type="file" name="fileName" ></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><input type="submit" value="提交"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
+
+<script type="text/javascript">
+    function afterResponse() {
+        $("#formSubmit").ajaxSubmit(function (data) {
+            if (data.code == 1) {
+                alert(data.backMsg);
+            } else {
+                window.location.href="sysUser";
+            }
+        });
+        return false;
+    }
+    function afterResponse2() {
+        $("#formSubmit2").ajaxSubmit(function (data) {
+            if (data.code == 1) {
+                alert(data.backMsg);
+            } else {
+                alert("文件上传成功");
+                window.location.href="sysUser";
+            }
+        });
+        return false;
+    }
+</script>

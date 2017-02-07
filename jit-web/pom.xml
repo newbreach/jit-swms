@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>jit-parent</artifactId>
+        <groupId>cn.jitmarketing</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../jit-parent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>jit-web</artifactId>
+    <packaging>war</packaging>
+    <name>jit-web Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+
+
+
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.jitmarketing</groupId>
+            <artifactId>jit-core</artifactId>
+            <version>${jit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.jitmarketing</groupId>
+            <artifactId>jit-util</artifactId>
+            <version>${jit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.jitmarketing</groupId>
+            <artifactId>jit-swms</artifactId>
+            <version>${jit.version}</version>
+        </dependency>
+    </dependencies>
+
+
+
+    <build>
+        <finalName>jit-web</finalName>
+        <filters>
+            <!-- ${env} 在下面的profile中配置 -->
+            <filter>src/main/filter/${env}-config.properties</filter>
+        </filters>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1-alpha-1</version>
+                <configuration>
+                    <warName>${project.artifactId}-${env}-${project.version}</warName>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <!-- 使用类似 mvn -Ppro package 命令打包生产环境，开发环境，测试环境的发布包  -->
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <env>dev</env>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>pro</id>
+            <properties>
+                <env>pro</env>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <env>test</env>
+            </properties>
+        </profile>
+    </profiles>
+</project>

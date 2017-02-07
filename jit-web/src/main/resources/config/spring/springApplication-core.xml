@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-3.1.xsd ">
+
+    <!-- 配置资源文件信息 start********************** -->
+    <bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath:config/prop/jit.properties</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+        <property name="properties" ref="configProperties"/>
+    </bean>
+    <!-- 配置资源文件信息 end  ********************** -->
+
+    <!-- 扫描类包 start -->
+    <context:component-scan base-package="cn.jitmarketing">
+        <!-- 配置不扫描@Controller的注解 -->
+        <context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
+    </context:component-scan>
+    <!-- 扫描类包 end -->
+
+
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"/> <!-- 默认编码 (ISO-8859-1) -->
+        <property name="maxInMemorySize" value="10240"/> <!-- 最大内存大小 (10240)-->
+        <property name="maxUploadSize" value="-1"/> <!-- 最大文件大小，-1为无限止(-1) -->
+    </bean>
+
+
+    <!--自定义定义异常处理请求start -->
+    <bean class="cn.jitmarketing.framework.exception.ExceptionHandler" id="exceptionResolver" />
+
+
+    <bean class="cn.jitmarketing.framework.BeanTools" lazy-init="false"/>
+
+</beans>

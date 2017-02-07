@@ -1,0 +1,6 @@
+cn\jitmarketing\framework\page\MybatisPage.class
+cn\jitmarketing\framework\aspectj\ControllerTraceAspect.class
+cn\jitmarketing\framework\exception\ExceptionHandler.class
+cn\jitmarketing\framework\exception\ApplicationException.class
+cn\jitmarketing\web\JsonResponseResult.class
+cn\jitmarketing\framework\BeanTools.class

@@ -1,0 +1,90 @@
+/* 定义input表单样式*/
+input[type='text'] {
+    border-radius: 5px;
+    border: 1px solid rgb(204, 204, 204);
+    padding: 6px 12px;
+}
+
+select {
+    border-radius: 5px;
+    border: 1px solid rgb(204, 204, 204);
+    padding: 6px 12px;
+}
+
+.selectType {
+    border-radius: 5px;
+    border: 1px solid rgb(204, 204, 204);
+    padding: 6px 12px;
+}
+
+input[type='password'] {
+    border-radius: 5px;
+    border: 1px solid rgb(204, 204, 204);
+    padding: 6px 12px;
+}
+/*定义textarea样式*/
+.textareaCss {
+    width: 60%;
+    border-radius: 5px;
+    border: 1px solid rgb(204, 204, 204);
+    padding: 6px 12px;
+}
+
+.editDiv table {
+    width: 100%;
+    background-color: white;
+}
+
+.editDiv table tr {
+    height: 30px;
+    border-bottom: 1px dotted red ;
+    width: 100% ;
+}
+
+.editDiv table th {
+    height: 30px;
+    color: rgb(16, 132, 166);
+    font-size: 14px ;
+}
+
+.editDiv table td {
+    border-bottom: 1px dashed #cccccc;
+}
+
+.editDiv .navTitle {
+    height: 30px;
+    line-height: 30px;
+    background: #EEF7E3 ;
+    color: #4d6c2f ;
+    border-bottom: 1px solid #cccccc ;
+}
+
+table {
+    width: 100%;
+}
+
+table tr {
+    height: 30px;
+}
+
+table td {
+    border-bottom: 1px dashed #cccccc;
+}
+
+.handleButton {
+    display:inline-block;
+    width: 60px ;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    background: #0c7352 ;
+    color:#fff;
+    border-radius: 5px;
+    cursor: pointer ;
+}
+
+.handleButton:hover {
+    background-color: #0080c0;
+    cursor: pointer ;
+}
+a{text-decoration: none;}

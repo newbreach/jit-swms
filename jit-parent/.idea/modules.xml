@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../jit-core/jit-core.iml" filepath="$PROJECT_DIR$/../jit-core/jit-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jit-parent.iml" filepath="$PROJECT_DIR$/jit-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../jit-util/jit-util.iml" filepath="$PROJECT_DIR$/../jit-util/jit-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jit-util/jit-util.iml" filepath="$PROJECT_DIR$/jit-util/jit-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jit-web/jit-web.iml" filepath="$PROJECT_DIR$/jit-web/jit-web.iml" />
+    </modules>
+  </component>
+</project>
